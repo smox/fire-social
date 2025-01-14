@@ -2,6 +2,11 @@ import React from 'react';
 import './Menu.css';
 
 import Avatar from '@mui/material/Avatar/Avatar';
+import FeedIcon from '@mui/icons-material/Feed';
+import EventIcon from '@mui/icons-material/Event';
+import SchoolIcon from '@mui/icons-material/School';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import { Typography } from '@mui/material';
 
 
@@ -28,12 +33,11 @@ const Menu = () => {
           <Typography className="fire-department" variant="h6" sx={{ textAlign: "center"}}>{ fireDepartment }</Typography>
         </div>
         <ul className="menu-list">
-          <li className="menu-list__item">Feed</li>
-          <li className="menu-list__item">Veranstaltungen</li>
-          <li className="menu-list__item">e-learning</li>
-          <li className="menu-list__item">Spiele</li>
-          <li className="menu-list__item">Verwaltung</li>
-          <li className="menu-list__item">Test</li>
+          <li className="menu-list__item"><a href="/"><FeedIcon sx={{ marginRight: "3px"}} />Feed</a></li>
+          <li className="menu-list__item"><a href="/pages/events"><EventIcon sx={{ marginRight: "3px"}} />Veranstaltungen</a></li>
+          <li className="menu-list__item"><a href="/pages/learn"><SchoolIcon sx={{ marginRight: "3px"}} />e-learning</a></li>
+          <li className="menu-list__item"><a href="/pages/games"><SportsEsportsIcon sx={{ marginRight: "3px"}} />Spiele</a></li>
+          <li className="menu-list__item"><a href="/pages/manage"><ManageSearchIcon sx={{ marginRight: "3px"}} />Verwaltung</a></li>
         </ul>
       </div>
     </div>
