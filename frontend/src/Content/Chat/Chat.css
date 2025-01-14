@@ -1,3 +1,36 @@
 .chat-wrapper {
     width: 260px;
 }
+
+.chat-wrapper .chat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 14px 0 14px 0;
+    height: calc(100% - 14px);
+    border-radius: 20px;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+}
+
+.chat .user-list {
+    padding-left: 5px;
+}
+
+.chat .user-list .user-list-item {
+    font-size: x-large;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.chat .user-list .user-list-item .MuiAvatar-root {
+    margin: 10px;
+}
+
+.chat .user-list .user-list-item .MuiTypography-root {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
