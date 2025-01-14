@@ -4,10 +4,7 @@ import Chat from './Chat/Chat';
 import Feed from './Feed/Feed';
 import Menu from './Menu/Menu';
 
-export interface IContentProps {
-}
-
-const Content = (props: IContentProps) => {
+const Content = () => {
   return (
     <div className="content">
         <Menu />
