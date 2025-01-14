@@ -1,5 +1,6 @@
 * {
   font-family: Roboto, sans-serif;
+  box-sizing: border-box; /* Padding wird innerhalb der Höhe gerechnet */
 }
 
 html, body, #root {
@@ -7,7 +8,7 @@ html, body, #root {
   padding: 0;          /* Entfernt Standardinnenabstände */
   height: 100%;        /* Höhe auf 100% des Viewports */
   width: 100%;         /* Breite auf 100% des Viewports */
-  box-sizing: border-box; /* Padding wird zur Breite dazugezählt */
+  box-sizing: border-box; /* Padding wird zur Höhe/Breite dazugezählt */
 }
 
 :root {
