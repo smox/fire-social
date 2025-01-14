@@ -2,7 +2,7 @@ import './Header.css';
 import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Avatar } from '@mui/material';
+
 
 
 const Header = () => {
@@ -20,7 +20,6 @@ const Header = () => {
             <PersonIcon fontSize='large' className='notification-icon'/>
             <ChatIcon fontSize='large' className='notification-icon'/>
             <NotificationsIcon fontSize='large' className='notification-icon'/>
-            <Avatar className='notification-avatar' alt="Michael Brunner" src="/avatar/mb_profilfoto.webp" />
           </div>
         </div>
     </div>

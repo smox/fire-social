@@ -64,14 +64,9 @@
 
   .notification-icon {
     margin-right: 0.8rem;
-  }
+  }  
   
-  .notification-avatar {
-    margin-right: 0.8rem;
-  }
-  
-  
-  
+
   @media (max-width: 600px) {  /* Breite für kleine Geräte */
 
     .title-wrapper {

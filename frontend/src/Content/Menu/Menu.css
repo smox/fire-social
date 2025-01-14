@@ -3,9 +3,61 @@
 }
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin: 14px 0 14px 0;
     height:calc(100% - 14px);
     border-radius: 20px;
     background-color: red;
 }
+
+.menu .avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.menu .avatar .name {
+    margin-top: 20px;
+}
+
+.menu .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+
+    margin-top: 10px;
+    list-style: none;
+}
+
+.menu .menu-list .menu-list__item {
+    font-size: x-large;
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    line-height: normal; /* Verhindert unerwünschtes Strecken */
+}
+  
+.menu-list__item::before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 2px; /* Strichhöhe */
+    width: 0; /* Anfangsbreite: 0, damit er wächst */
+    bottom: 0;
+    left: 0; /* Start am linken Rand */
+    background-color: aliceblue; /* Farbe des Strichs */
+    transition: width 0.3s ease-out; /* Animation */
+}
+  
+  .menu-list__item:hover::before {
+    width: 100%; /* Strich wächst über die volle Breite des Texts */
+  }
