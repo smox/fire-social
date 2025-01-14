@@ -1,5 +1,7 @@
+/* Standard Design für große Bildschirme */
 .menu-wrapper {
     width: 260px;
+    transition: width 0.3s ease-in-out;
 }
 
 .menu {
@@ -7,9 +9,10 @@
     flex-direction: column;
     width: 100%;
     margin: 14px 0 14px 0;
-    height:calc(100% - 14px);
+    height: calc(100% - 14px);
     border-radius: 20px;
     background-color: red;
+    transition: width 0.3s ease-in-out;
 }
 
 .menu .avatar {
@@ -18,10 +21,13 @@
     align-items: center;
     justify-content: center;
     margin: 30px;
+    transition: all 0.3s ease-in-out;
 }
 
-.menu .avatar .name {
-    margin-top: 20px;
+.menu .avatar .name,
+.menu .fire-department {
+    display: block;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .menu .menu-list {
@@ -30,40 +36,144 @@
     align-items: start;
     width: 100%;
     height: 100%;
-
     padding-left: 0;
     margin: 10px 0 10px 30px;
     list-style: none;
 }
 
-.menu .menu-list .menu-list__item {
+.menu .menu-list .menu-list-item {
     font-size: x-large;
     cursor: pointer;
-
     position: relative;
-    display: inline-block;
-    padding: 5px 0;
-    line-height: normal; /* Verhindert unerwünschtes Strecken */
-}
-
-.menu .menu-list .menu-list__item a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 10px 0;
 }
-  
-.menu-list__item::before {
+
+.menu .menu-list .menu-list-item a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: start;
+    transition: opacity 0.3s ease-in-out, max-width 0.3s ease-in-out;
+}
+
+.menu .menu-list .menu-list-item .menu-list-item__icon {
+    flex-shrink: 0;
+    width: 40px; /* Feste Breite, damit die Icons nicht verschoben werden */
+    text-align: center;
+}
+
+.menu .menu-list .menu-list-item .menu-list-item__text {
+    opacity: 1;
+    visibility: visible;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out, max-width 0.3s ease-in-out;
+}
+
+.menu-list-item::before {
     display: block;
     content: '';
     position: absolute;
-    height: 2px; /* Strichhöhe */
-    width: 0; /* Anfangsbreite: 0, damit er wächst */
+    height: 2px;
+    width: 0;
     bottom: 0;
-    left: 0; /* Start am linken Rand */
-    background-color: aliceblue; /* Farbe des Strichs */
-    transition: width 0.3s ease-out; /* Animation */
+    left: 0;
+    background-color: aliceblue;
+    transition: width 0.3s ease-out;
 }
-  
-  .menu-list__item:hover::before {
-    width: 100%; /* Strich wächst über die volle Breite des Texts */
-  }
+
+.menu-list-item:hover::before {
+    width: 100%;
+}
+
+/* Keyframe-Animation für smooth-in/out */
+@keyframes avatarShrink {
+    0% {
+        transform: scale(1);
+        border-radius: 50%;
+    }
+    100% {
+        transform: scale(0.5);
+        border-radius: 50%;
+    }
+}
+
+@keyframes avatarExpand {
+    0% {
+        transform: scale(0.5);
+        border-radius: 50%;
+    }
+    100% {
+        transform: scale(1);
+        border-radius: 50%;
+    }
+}
+
+/* Avatar bleibt immer rund */
+.menu .avatar img,
+.menu .avatar .MuiAvatar-root {
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Für kleine Bildschirme oder zusammengeklapptes Menü */
+@media (max-width: 600px) {
+    .menu-wrapper {
+        width: 60px;
+    }
+
+    .menu .avatar {
+        margin: 10px 0 0 0;
+    }
+
+    .menu .avatar .name,
+    .menu .fire-department {
+        opacity: 0; /* Ausblenden der Texte */
+        visibility: hidden;
+        height: 0;
+    }
+
+    .menu .menu-list {
+        margin: 0 0 0 0;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu .menu-list .menu-list-item a {
+        justify-content: center; /* Zentrierte Icons */
+    }
+
+    .menu .menu-list .menu-list-item .menu-list-item__icon {
+        width: 40px; /* Gleiche Breite bleibt bestehen */
+    }
+
+    .menu .menu-list .menu-list-item .menu-list-item__text {
+        opacity: 0;
+        visibility: hidden;
+        max-width: 0;
+        pointer-events: none;
+    }
+
+    .menu-list-item::before {
+        display: none;
+    }
+
+    .menu .avatar img,
+    .menu .avatar .MuiAvatar-root {
+        height: 40px;
+        width: 40px;
+        font-size: 2rem;
+    }
+}
+
+/* Hover-Effekt bleibt rund */
+.menu .avatar:hover img,
+.menu .avatar:hover .MuiAvatar-root {
+    transform: scale(1.2);
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

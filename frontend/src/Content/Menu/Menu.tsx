@@ -12,6 +12,8 @@ import { Typography } from '@mui/material';
 
 const Menu = () => {
 
+  const [ isCollapsed, setIsCollapsed ] = React.useState(false);
+
   const [ name, setName ] = React.useState('Michael Stefan Brunner');
   const [ shortName, setShortName ] = React.useState('');
 
@@ -25,7 +27,7 @@ const Menu = () => {
 
 
   return (
-    <div className="menu-wrapper">
+    <div className={ `menu-wrapper ${isCollapsed ? 'collapsed' : ''}` }>
       <div className="menu">
         <div className="avatar">
           <Avatar alt={ name } src={`/avatar/${shortName.toLocaleLowerCase()}_profilbild.jpg`} sx={{ height: "200px", width: "200px", fontSize: "5rem" }}>{ shortName }</Avatar>
@@ -33,11 +35,12 @@ const Menu = () => {
           <Typography className="fire-department" variant="h6" sx={{ textAlign: "center"}}>{ fireDepartment }</Typography>
         </div>
         <ul className="menu-list">
-          <li className="menu-list__item"><a href="/"><FeedIcon sx={{ marginRight: "3px"}} />Feed</a></li>
-          <li className="menu-list__item"><a href="/pages/events"><EventIcon sx={{ marginRight: "3px"}} />Veranstaltungen</a></li>
-          <li className="menu-list__item"><a href="/pages/learn"><SchoolIcon sx={{ marginRight: "3px"}} />e-learning</a></li>
-          <li className="menu-list__item"><a href="/pages/games"><SportsEsportsIcon sx={{ marginRight: "3px"}} />Spiele</a></li>
-          <li className="menu-list__item"><a href="/pages/manage"><ManageSearchIcon sx={{ marginRight: "3px"}} />Verwaltung</a></li>
+          { /** isCollapsed && <li className="menu-list-item"><button onClick={() => setIsCollapsed(!isCollapsed)}>{ isCollapsed ? <MenuOpenIcon /> : <MenuIcon /> }</button></li> **/}
+          <li className="menu-list-item"><a href="/"><FeedIcon sx={{ marginRight: "3px"}} /><div className='menu-list-item__text'>Feed</div></a></li>
+          <li className="menu-list-item"><a href="/pages/events"><EventIcon sx={{ marginRight: "3px"}} /><div className='menu-list-item__text'>Veranstaltungen</div></a></li>
+          <li className="menu-list-item"><a href="/pages/learn"><SchoolIcon sx={{ marginRight: "3px"}} /><div className='menu-list-item__text'>e-learning</div></a></li>
+          <li className="menu-list-item"><a href="/pages/games"><SportsEsportsIcon sx={{ marginRight: "3px" }} /><div className='menu-list-item__text'>Spiele</div></a></li>
+          <li className="menu-list-item"><a href="/pages/manage"><ManageSearchIcon sx={{ marginRight: "3px" }} /><div className='menu-list-item__text'>Verwaltung</div></a></li>
         </ul>
       </div>
     </div>
