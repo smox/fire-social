@@ -1,6 +1,7 @@
 .chat-wrapper {
     width: 260px;
     height: calc(100vh - 80px);
+    transition: width 0.3s ease-in-out; /* Wenn die Seite verkleinert wird, wird die Breite des Menüs in 0.3 Sekunden verkleinert */
 }
 
 .chat-wrapper .chat {
@@ -36,4 +37,24 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+    .chat-wrapper {
+        width: 60px;
+    }
+
+    .chat-wrapper .chat .chat-title {
+        display: none;
+    }
+
+    .chat-wrapper .chat .user-list .user-list-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .chat-wrapper .chat .user-list .user-list-item .user-list__name {
+        display: none;
+    }
 }
