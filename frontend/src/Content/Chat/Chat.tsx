@@ -16,12 +16,45 @@ const Chat = () => {
     }, {
       name: "Maximilian Schwarzmüller",
       avatar: '/avatar/ms_profilbild.jpg'
-    },{
+    }, {
       name: "Sandra Müller",
       avatar: '/avatar/sm_profilbild.jpg'
     }, {
       name: "Max Mustermann",
       avatar: '/avatar/mm_profilbild.jpg'
+    }, {
+      name: "Marius Hofer",
+      avatar: '/avatar/mh_profilbid.jpg'
+    }, {
+      name: "Stefan Kowalski",
+      avatar: '/avatar/sk_profilbild.jpg'
+    }, {
+      name: "Lena Meier",
+      avatar: '/avatar/lm_profilbild.jpg'
+    }, {
+      name: "Maximilian Schwarzmüller",
+      avatar: '/avatar/ms_profilbild.jpg'
+    }, {
+      name: "Sandra Müller",
+      avatar: '/avatar/sm_profilbild.jpg'
+    }, {
+      name: "Max Mustermann",
+      avatar: '/avatar/mm_profilbild.jpg'
+    }, {
+      name: "Marius Hofer",
+      avatar: '/avatar/mh_profilbid.jpg'
+    }, {
+      name: "Stefan Kowalski",
+      avatar: '/avatar/sk_profilbild.jpg'
+    }, {
+      name: "Lena Meier",
+      avatar: '/avatar/lm_profilbild.jpg'
+    }, {
+      name: "Maximilian Schwarzmüller",
+      avatar: '/avatar/ms_profilbild.jpg'
+    }, {
+      name: "Sandra Müller",
+      avatar: '/avatar/sm_profilbild.jpg'
     }
   ];
 

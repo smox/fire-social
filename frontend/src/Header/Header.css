@@ -1,6 +1,6 @@
 .header {
     background-color: red;
-    height: 4rem;
+    height: var(--header-height);
     display: flex;
     flex-direction: row;
     align-items: center;

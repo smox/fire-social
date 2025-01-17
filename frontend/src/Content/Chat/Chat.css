@@ -1,20 +1,23 @@
 .chat-wrapper {
     width: 260px;
+    height: calc(100vh - 80px);
 }
 
 .chat-wrapper .chat {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 14px 0 14px 0;
-    height: calc(100% - 14px);
+    height: 95%;
+    margin: 14px 0 0 0;
     border-radius: 20px;
-    background-color: red;
+    background-color: #dbd9d9;
+    color: rgb(65, 64, 64);
     transition: width 0.3s ease-in-out;
 }
 
 .chat .user-list {
     padding-left: 5px;
+    overflow-y: scroll;
 }
 
 .chat .user-list .user-list-item {
