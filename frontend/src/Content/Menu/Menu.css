@@ -12,8 +12,8 @@
     height: 95%;
     margin: 14px 0 14px 0;
     border-radius: 20px;
-    background-color: #dbd9d9;
-    color: rgb(65, 64, 64);
+    background-color: var(--background-color);
+    color: var(--text-color);
     border-color: black;
     border-width: 1px;
     border-style: solid;
@@ -125,7 +125,7 @@
 }
 
 /* Für kleine Bildschirme oder zusammengeklapptes Menü */
-@media (max-width: 600px) {
+@media (max-width: 786px) {
     .menu-wrapper {
         width: 60px;
     }

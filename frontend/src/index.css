@@ -13,6 +13,9 @@ html, body, #root {
 
 :root {
 
+  --background-color: #dbd9d9;
+  --text-color: rgb(65, 64, 64);
+
   --header-height: 4rem;
 
   width: 100vw;

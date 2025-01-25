@@ -1,12 +1,16 @@
+import { IPost } from '../../interfaces/Models';
 import './Feed.css';
+import Post from './Post/Post';
+import { posts } from '../../TestData/posts';
 
-export interface IFeedProps {
-}
 
-const Feed = (props: IFeedProps) => {
+const Feed = () => {
+  
   return (
     <div className="feed-wrapper">
-      Feed
+      <ul className="posts">
+        { posts.map((post: IPost) => (<Post post={ post } /> )) }
+      </ul>
     </div>
   );
 }

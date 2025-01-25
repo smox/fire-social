@@ -11,8 +11,8 @@
     height: 95%;
     margin: 14px 0 0 0;
     border-radius: 20px;
-    background-color: #dbd9d9;
-    color: rgb(65, 64, 64);
+    background-color: var(--background-color);
+    color: var(--text-color);
     transition: width 0.3s ease-in-out;
 }
 
@@ -39,8 +39,9 @@
     text-overflow: ellipsis;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .chat-wrapper {
+        display: 1;
         width: 60px;
     }
 
@@ -55,6 +56,12 @@
     }
 
     .chat-wrapper .chat .user-list .user-list-item .user-list__name {
+        display: none;
+    }
+}
+
+@media (max-width: 530px) {
+    .chat-wrapper {
         display: none;
     }
 }
