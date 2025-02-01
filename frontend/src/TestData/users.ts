@@ -94,3 +94,18 @@ export const KarlMüller = {
     email: 'karl.mueller@feuerwehr.gv.at',
     avatar: '/stockfotos_user/km_profilfoto.webp'
 }
+
+export const allOtherUsers = [
+    AnnaSchmidt,
+    GeorgWimmer,
+    ReneWeber,
+    SabineKoenig,
+    ThomasBauer,
+    MichaelWagner,
+    MariaHuber,
+    PeterMeier,
+    LisaBaumgartner,
+    ClaudiaFischer,
+    ThomasMueller,
+    KarlMüller
+];
