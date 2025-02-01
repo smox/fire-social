@@ -6,6 +6,8 @@
 .posts {
     padding-left: 16px;
     padding-right: 16px;
+    height: 98%;
+    overflow-y: auto;
 }
 
 @media (max-width: 530px) {
