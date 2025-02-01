@@ -28,12 +28,10 @@ const Post = ({ post }: IPostProps) => {
     <div className="post-wrapper">
         <div className="post">
             <div className="post-inner">
-                <div className="post-avatar">
+                <figure className="post-avatar">
                     <Avatar src={ post.user.avatar } sx={{ height: "10rem", width: "10rem" }} alt={ post.user.name } />
-                    <div className="user-info">
-                        <h4 className="user-name">{ post.user.name }</h4>
-                    </div>
-                </div>
+                    <figcaption className="post-avatar__user-name">{ post.user.name } </figcaption>
+                </figure>
                 <div className="post-content">
                     <h2 className="post-content__title">{ post.title }</h2>
                     <p className="post-content__text">{ post.content }</p>

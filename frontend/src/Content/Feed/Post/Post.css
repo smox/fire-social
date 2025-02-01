@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     color: var(--text-color);
-    /* background-color: var(--background-color); */
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
 }
 
 .post {
@@ -13,29 +12,23 @@
 }
 
 .post-inner {
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; Kommt dann zum Media Query */
-    padding: 1rem;
-}
-
-
-.post .post-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.post-content__text {
-    white-space: pre-wrap;
     max-height: 800px;
     overflow-y: auto;
 }
 
-.post-avatar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
+.post-inner .post-avatar {
+    float: left;
+    margin: 32px 24px 2px 16px;
+}
+
+.post-inner .post-avatar .post-avatar__user-name {
+    margin-top: 4px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.post-content__text {
+    white-space: pre-wrap;
 }
 
 .attachment-wrapper {
