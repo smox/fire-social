@@ -1,99 +1,95 @@
-// Beispiel: posts.ts
-
 import { v4 as uuid } from 'uuid';
-import { IPost } from '../interfaces/Models'; // Pfad an dein IPost-Interface anpassen
+import { IPost } from '../interfaces/Models';
+import { AnnaSchmidt, ClaudiaFischer, GeorgWimmer, KarlMüller, LisaBaumgartner, MariaHuber, MichaelWagner, PeterMeier, 
+  ReneWeber, SabineKoenig, ThomasBauer, ThomasMueller, currentUser } from '../TestData/users';
 
 
-const AnnaSchmidt = {
-  id: uuid(),
-  name: 'Anna Schmidt',
-  email: 'anna.schmidt@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/as_profilfoto.webp',
-}
-
-const GeorgWimmer = {
-  id: uuid(),
-  name: 'Georg Wimmer',
-  email: 'georg.wimmer@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/gw_profilfoto.webp',
-}
-
-
-const ReneWeber = {
-  id: uuid(),
-  name: 'Rene Weber',
-  email: 'rene.weber@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/rw_profilfoto.webp',
-}
-
-
-const SabineKoenig = {
-  id: uuid(),
-  name: 'Sabine König',
-  email: 'sabine.koenig@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/sk_profilfoto.webp',
-}
-
-
-const ThomasBauer = {
-  id: uuid(),
-  name: 'Thomas Bauer',
-  email: 'thomas.bauer@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/tb_profilfoto.webp',
-}
-
-const MichaelWagner = {
-  id: uuid(),
-  name: 'Michael Wagner',
-  email: 'michael.wagner@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/mw_profilfoto.webp',
-}
-
-const MariaHuber = {
-  id: uuid(),
-  name: 'Maria Huber',
-  email: 'maria.huber@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/mh_profilfoto.webp'
-}
-
-const PeterMeier = {
-    id: uuid(),
-    name: 'Peter Meier',
-    email: 'peter.meier@feuerwehr.gv.at',
-    avatar: '/stockfotos_user/pm_profilfoto.webp',
-}
-
-const LisaBaumgartner = {
-  id: uuid(),
-  name: 'Lisa Baumgartner',
-  email: 'lisa.baumgartner@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/lb_profilfoto.webp'
-}
-
-const ClaudiaFischer = {
-  id: uuid(),
-  name: 'Claudia Fischer',
-  email: 'claudia.fischer@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/cf_profilfoto.webp'
-}
-
-
-const ThomasMueller = {
-  id: uuid(),
-  name: 'Thomas Müller',
-  email: 'thomas.mueller@gmai.com',
-  avatar: '/stockfotos_user/tm_profilfoto.webp'
-}
-
-const KarlMüller = {
-  id: uuid(),
-  name: 'Karl Müller',
-  email: 'karl.mueller@feuerwehr.gv.at',
-  avatar: '/stockfotos_user/km_profilfoto.webp'
-}
 
 export const posts: IPost[] = [
   {
+    id: uuid(),
+    title: 'Verkehrsunfall mit 3 Fahrzeugen',
+    content: 'In den frühen Morgenstunden des 26.01.2025 wurde die Freiwillige Feuerwehr Lengenfeld zu einem schweren Verkehrsunfall auf die B37 auf Höhe Jaidhof alarmiert.'+
+      '\n\nGegen 05:30 Uhr kollidierten bei starkem Nebel drei PKWs miteinander, die Insassen wurden teilweise in ihren Autos eingeklemmt. Die demolierten Autos kamen auf der Fahrbahn beziehungsweise im angrenzenden Feld zu stehen. Alarmiert wurden die Feuerwehren Eisengraben, Gföhl und Sperkental zur Menschenrettung, zu welcher sie unverzüglich ausrückten. Die verletzten Personen konnten von den ortsansässigen Feuerwehren rasch mittels hydraulischem Rettungsgerät aus ihren Fahrzeugen befreit und an den Rettungsdienst und die Notärzte übergeben werden.'+
+      'Zur Bergung der Unfallfahrzeuge wurde schließlich die Freiwillige Feuerwehr Lengenfeld nachalarmiert, die mit dem Rüstlösch- und dem Wechselladefahrzeug mit Kran auf die B37 ausfuhr. Nachdem die drei Unfallwracks nicht mehr fahrtüchtig waren, rüstete sich die FF Lengenfeld mit Felgenbändern, Ketten und dem Hebekreuz aus. Die Autos wurden mit dem Kran des Wechselladers auf dessen Bergeplateau gehoben, dort festgemacht und zum nächstgelegenen, geeignetem Abstellplatz gebracht. Dort wartete die Feuerwehr Sperkental und unterstützte beim Abladen. Die Kameraden aus Gföhl und Eisengraben banden derweilen die ausgetretenen Flüssigkeiten und reinigten die Fahrbahn. Danach konnte die B37 durch die Exekutive wieder für den Verkehr freigegeben werden.\n\n'+
+      'Die 11 Mitglieder der Freiwilligen Feuerwehr Lengenfeld konnten mit ihren beiden Fahrzeugen nach über zwei Stunden den Einsatz beenden und ins Feuerwehrhaus einrücken.\n\n'+
+      'Herzlichen Dank für die gute Zusammenarbeit!',
+    attachments: [{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/1.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 1.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/2.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 2.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/3.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 3.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/4.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 4.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/5.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 5.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/6.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 6.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/7.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 7.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/8.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 8.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/9.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 9.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/10.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 10.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/11.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 11.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/12.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 12.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/13.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 13.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/14.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 14.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/15.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 15.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/16.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 16.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/17.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 17.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/18.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 18.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/19.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 19.Foto" 
+    },{ 
+      url: '/stockfotos_einsaetze/vu_3_kfz/20.jpg', 
+      altText: "Verkehrsunfall mit 3 Fahrzeugen 20.Foto" 
+    }],
+    category: 'Incidences', // TCategory
+    visibility: 'Public',           // TVisibility
+    customVisibility: null,
+    tags: ['Einsaetze', 'PKW', 'Verkehrsunfall'],
+    createdAt: new Date('2025-01-26T08:30:00.000Z'),
+    likes: [ currentUser ],
+    comments: [{
+      id: uuid(),
+      content: "Super Arbeit!",
+      createdAt: new Date('2025-01-26T11:00:00.000Z'),
+      likes: [ currentUser ],
+      user: ClaudiaFischer,
+    }],
+    user: GeorgWimmer,
+  }, {
     id: uuid(),
     title: 'Neues Mitglied unserer Feuerwehrjugend',
     content: 'Wir begrüßen unser neuestes Mitglied "Thomas Müller" in der Feuerwehrjugend.\nDas gesamte Betreuerteam freut sich auf eine tolle Zeit mit dir!',

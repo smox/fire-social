@@ -27,6 +27,8 @@
 
 .post-content__text {
     white-space: pre-wrap;
+    max-height: 800px;
+    overflow-y: auto;
 }
 
 .post-avatar {
@@ -42,16 +44,18 @@
 .attachments {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: start;
-
+    align-content: center;
+    
     margin-bottom: 1rem;
-    height: 7rem;
-    overflow-y: scroll;
+    height: 10rem;
+    width: calc(100vw - 680px);
+    overflow-x: auto;
 }
 
 .attachment {
-    height: 100%;
+    margin: auto 8px auto 0;
+    height: 80%;
 }
 
 
@@ -88,12 +92,6 @@
 .comments-count:hover::after {
     transform: scaleX(1);  /* volle Breite */
 }
-
-/*
-.post-comments .comments-count:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-} */
 
 /* Zustand für ausgeklappte Kommentare */
 .comments.show-comments {
@@ -148,17 +146,31 @@
     
 }
 
-@media (max-width: 786px) {
+@media (max-width: 1000px) {
+    
     .post-wrapper {
         margin: 0 0 1rem 0;
     }
 
+    .attachments {
+        width: calc(100vw - 440px);
+    }
+
+}
+
+@media (max-width: 786px) {
+    
     .post-details {
         flex-wrap: wrap;
     }
-
+    
     .post-likes, .post-comments {
         flex: 1;
         justify-content: start;
     }
+
+    .attachments {
+        width: calc(100vw - 240px);
+    }
+
 }
