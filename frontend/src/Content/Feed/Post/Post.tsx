@@ -44,7 +44,7 @@ const Post = ({ post }: IPostProps) => {
                         <div className="attachments">
                             { post.attachments.map((attachment: IAttachment) => {
                                 return (
-                                    <img className="attachment" src={ attachment.url } alt={ attachment.altText } />
+                                    <img key={ attachment.id } className="attachment" src={ attachment.url } alt={ attachment.altText } />
                                 );
                             }) }
                         </div>
@@ -72,7 +72,7 @@ const Post = ({ post }: IPostProps) => {
         { 
             post.comments.map((comment: IComment) => {
                 return (
-                    <li className="comment">
+                    <li key={ comment.id } className="comment">
                         <div className="comment-info">
                             <div className="comment-user-info">
                                 <Avatar src={ comment.user.avatar } sx={{ height: "8rem", width: "8rem" }} alt={ comment.user.name } />

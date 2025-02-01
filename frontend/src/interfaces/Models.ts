@@ -42,6 +42,7 @@ export type TCategory =
     | "PublicInformation" // Bürgerinformationen
 
 export interface IAttachment {
+    id: string;
     url: string;
     altText: string;
 }

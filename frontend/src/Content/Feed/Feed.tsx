@@ -9,7 +9,7 @@ const Feed = () => {
   return (
     <div className="feed-wrapper">
       <ul className="posts">
-        { posts.map((post: IPost) => (<Post post={ post } /> )) }
+        { posts.map((post: IPost) => (<Post key={ post.id } post={ post } /> )) }
       </ul>
     </div>
   );

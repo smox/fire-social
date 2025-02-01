@@ -12,7 +12,7 @@ const Chat = () => {
         <Typography sx={{ textAlign: "center", marginTop: "20px" }} className="chat-title" variant="h4">Chat</Typography>
         <ul className="user-list">
           { friends.map(friend => (
-            <div className="user-list-item">
+            <div key={ friend.id } className="user-list-item">
               <Avatar className='user-list__avatar' src={friend.avatar} />
               <Typography className='user-list__name' variant="h6">{friend.name}</Typography>
             </div>

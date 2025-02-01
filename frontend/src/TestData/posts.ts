@@ -15,63 +15,83 @@ export const posts: IPost[] = [
       'Die 11 Mitglieder der Freiwilligen Feuerwehr Lengenfeld konnten mit ihren beiden Fahrzeugen nach über zwei Stunden den Einsatz beenden und ins Feuerwehrhaus einrücken.\n\n'+
       'Herzlichen Dank für die gute Zusammenarbeit!',
     attachments: [{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/1.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 1.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/2.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 2.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/3.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 3.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/4.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 4.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/5.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 5.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/6.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 6.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/7.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 7.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/8.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 8.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/9.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 9.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/10.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 10.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/11.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 11.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/12.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 12.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/13.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 13.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/14.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 14.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/15.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 15.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/16.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 16.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/17.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 17.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/18.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 18.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/19.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 19.Foto" 
     },{ 
+      id: uuid(),
       url: '/stockfotos_einsaetze/vu_3_kfz/20.jpg', 
       altText: "Verkehrsunfall mit 3 Fahrzeugen 20.Foto" 
     }],
@@ -94,6 +114,7 @@ export const posts: IPost[] = [
     title: 'Neues Mitglied unserer Feuerwehrjugend',
     content: 'Wir begrüßen unser neuestes Mitglied "Thomas Müller" in der Feuerwehrjugend.\nDas gesamte Betreuerteam freut sich auf eine tolle Zeit mit dir!',
     attachments: [{ 
+      id: uuid(),
       url: '/stockfotos_user/tm_aufnahme_fj.webp', 
       altText: "Thomas Müller wird in die Feuerwehrjugend aufgenommen" 
     }],
@@ -117,9 +138,11 @@ export const posts: IPost[] = [
     title: 'Brand in der Hauptstraße erfolgreich gelöscht',
     content: 'Heute Nacht wurde ein Wohnhausbrand in der Hauptstraße erfolgreich gelöscht.\n\nEin großes Dankeschön an alle Kameraden, die vor Ort waren!',
     attachments: [{
+      id: uuid(),
       url: 'https://via.placeholder.com/150',
       altText: "attachment1"
     }, {
+      id: uuid(),
       url: 'https://via.placeholder.com/200',
       altText: "attachment2"
     }],
@@ -180,10 +203,7 @@ export const posts: IPost[] = [
     id: uuid(),
     title: 'Einladung zum Sommerfest',
     content: 'Wir laden euch herzlich zu unserem Sommerfest ein! Datum: 25.06. Ort: Feuerwehrhaus. Für Speis und Trank ist gesorgt!',
-    attachments: [{
-      url: 'https://via.placeholder.com/150',
-      altText: 'attachment1'
-    }],
+    attachments: [],
     category: 'Events',
     visibility: 'Public',
     customVisibility: null,
