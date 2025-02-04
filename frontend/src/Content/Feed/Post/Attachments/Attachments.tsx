@@ -3,6 +3,12 @@ import './Attachments.css';
 import { useRef, useState, useEffect } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Lightbox, { ViewCallbackProps } from 'yet-another-react-lightbox';
+import { Fullscreen, Counter, Zoom, Slideshow, Captions } from "yet-another-react-lightbox/plugins";
+
+import 'yet-another-react-lightbox/styles.css';
+import "yet-another-react-lightbox/plugins/counter.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 
 export interface IAttachmentsProps {
     attachments: IAttachment[];
@@ -16,7 +22,16 @@ export function Attachments ({ attachments }: IAttachmentsProps) {
     const [ showArrows, setShowArrows ] = useState(false);
     const [isAtLeftEdge, setIsAtLeftEdge] = useState(true);
     const [isAtRightEdge, setIsAtRightEdge] = useState(false);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [photoIndex, setPhotoIndex] = useState(0);
 
+
+
+    // Bild anklicken -> Lightbox öffnen:
+    const handleImageClick = (index: number) => {
+        setPhotoIndex(index);
+        setLightboxOpen(true);
+    };
 
     const scrollLeft = () => {
         attachmentsRef.current?.scrollBy({
@@ -66,7 +81,17 @@ export function Attachments ({ attachments }: IAttachmentsProps) {
           el.removeEventListener('scroll', handleScroll);
         };
       }, []);
-      
+    
+    //let slides = undefined;
+
+    //useEffect(() => {
+    const slides = attachments.map((attachment) => ({
+            src: attachment.url,
+            alt: attachment.altText,
+            title: "test titel",
+            description: "Hier kommt eine Beschreibung des Bilds hinein"
+        }));
+    //},[attachments]);
 
     return (
         <div className="attachment-wrapper">
@@ -79,7 +104,7 @@ export function Attachments ({ attachments }: IAttachmentsProps) {
                     { attachments.map((attachment: IAttachment, index: number, array: IAttachment[]) => {
                         return (
                             <img key={ attachment.id } className="attachment" src={ attachment.url } alt={ attachment.altText } 
-                                onLoad={ array.length-1 === index ? handleScroll : undefined } />
+                                onLoad={ array.length-1 === index ? handleScroll : undefined } onClick={ () => handleImageClick(index) }/>
                         );
                     }) }
                 </div>
@@ -87,6 +112,22 @@ export function Attachments ({ attachments }: IAttachmentsProps) {
                     <ArrowForwardIosIcon fontSize="large" />
                 </button>
             </div>
+            {lightboxOpen && (
+                <Lightbox
+                    open={lightboxOpen}
+                    close={() => setLightboxOpen(false)}
+                    slides={slides}
+                    index={photoIndex}
+                    // optional: Event, um den Index zu aktualisieren
+                    on={{
+                        view: ({ index }: ViewCallbackProps) => setPhotoIndex(index),
+                    }}
+                    // Plugins (optional)
+                    plugins={[ Fullscreen, Counter, Zoom, Slideshow, Captions ]}
+                    captions={{ showToggle: true, descriptionTextAlign: "center" }}
+                    counter={{ container: { style: { top: "unset", bottom: 0, fontSize: "larger" } } }}
+                    />
+                )}
         </div>
     );
 }

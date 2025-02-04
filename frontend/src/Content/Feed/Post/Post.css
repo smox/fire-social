@@ -138,3 +138,11 @@
     }
 
 }
+
+@media (max-width: 530px) {
+    
+    .post {
+        padding: 0 8 8 8;
+    }
+
+}

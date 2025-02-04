@@ -1,5 +1,4 @@
 .attachment-wrapper {
-    margin: 1rem;
 }
 
 /* Behälter für Buttons + Galerie */
@@ -22,7 +21,7 @@
     
     margin-bottom: 1rem;
     height: 10rem;
-    width: calc(100vw - 680px);
+    width: calc(100vw - 645px);
 
     overflow-x: auto;
     scroll-behavior: smooth; /* optional: glattes Scrollen (manche Browser) */
@@ -92,21 +91,21 @@
 @media (max-width: 1000px) {
 
     .attachments {
-        width: calc(100vw - 440px);
+        width: calc(100vw - 415px);
     }
 
 }
 
 @media (max-width: 786px) {
     .attachments {
-        width: calc(100vw - 240px);
+        width: calc(100vw - 200px);
     }
 
 }
 
-@media (max-width: 505px) {
+@media (max-width: 530px) {
     .attachments {
-        width: calc(100vw - 140px);
+        width: calc(100vw - 130px);
     }
 
 }
