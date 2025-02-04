@@ -89,3 +89,24 @@
     transform: scale(1.1); /* 10% größer */
 }
 
+@media (max-width: 1000px) {
+
+    .attachments {
+        width: calc(100vw - 440px);
+    }
+
+}
+
+@media (max-width: 786px) {
+    .attachments {
+        width: calc(100vw - 240px);
+    }
+
+}
+
+@media (max-width: 505px) {
+    .attachments {
+        width: calc(100vw - 140px);
+    }
+
+}
