@@ -1,0 +1,91 @@
+.attachment-wrapper {
+    margin: 1rem;
+}
+
+/* Behälter für Buttons + Galerie */
+.attachments-container {
+    position: relative; /* wichtig, damit wir die Buttons absolut positionieren können */
+    width: 100%;
+    /* Höhe kannst du anpassen, evtl. nur eine Zeile */
+    margin-bottom: 1rem;
+}
+
+    
+/* Scrollbare Galerie selbst */
+.attachments {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+
+    gap: 8px;
+    
+    margin-bottom: 1rem;
+    height: 10rem;
+    width: calc(100vw - 680px);
+
+    overflow-x: auto;
+    scroll-behavior: smooth; /* optional: glattes Scrollen (manche Browser) */
+
+}
+
+/* Button-Basics */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* vertikal zentrieren */
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(200,200,200, 0.7); /* hellgrau, halbtransparent */
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  
+  /* Anfangszustand: unsichtbar */
+    opacity: 0;
+    pointer-events: none; /* verhindert Hover/Klick, solange unsichtbar */
+
+    transition: 
+        opacity 0.3s ease, 
+        background-color 0.3s ease;
+
+    z-index: 2;
+}
+
+.scroll-button:hover {
+    background-color: rgba(100,100,100, 0.7);
+}
+  
+/* Linke und rechte Buttons unterschiedlich platzieren */
+.scroll-button-left {
+    left: 1rem; /* 8px vom linken Rand */
+}
+  
+.scroll-button-right {
+    right: 1rem; /* 8px vom rechten Rand */
+}
+  
+/* sichtbar machen, wenn .visible */
+.scroll-button.visible {
+    opacity: 1;
+    pointer-events: auto; /* jetzt klickbar/hoverbar */
+}
+
+.attachment {
+    margin: auto 8px auto 0;
+    height: 80%;
+
+    object-fit: cover; /* falls du unterschiedliche Bildgrößen hast */
+    display: block; /* falls du inline-Elemente hast */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attachment:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* 10% größer */
+}
+

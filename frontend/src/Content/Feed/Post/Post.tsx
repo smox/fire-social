@@ -5,6 +5,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentIcon from '@mui/icons-material/Comment';
 import { currentUser } from '../../../TestData/users';
 import { useState } from 'react';
+import { Attachments } from './Attachments/Attachments';
 
 export interface IPostProps {
     post: IPost;
@@ -12,7 +13,7 @@ export interface IPostProps {
 
 
 
-const Post = ({ post }: IPostProps) => {
+const Post = ({ post }: IPostProps) => {     
 
     const [ showComments, setShowComments ] = useState<boolean>(false);
 
@@ -37,19 +38,7 @@ const Post = ({ post }: IPostProps) => {
                     <p className="post-content__text">{ post.content }</p>
                 </div>
             </div>
-            {
-                post.attachments && post.attachments.length > 0 && (
-                    <div className="attachment-wrapper">
-                        <h3 className="attachments-title">Bilder / Videos</h3>
-                        <div className="attachments">
-                            { post.attachments.map((attachment: IAttachment) => {
-                                return (
-                                    <img key={ attachment.id } className="attachment" src={ attachment.url } alt={ attachment.altText } />
-                                );
-                            }) }
-                        </div>
-                    </div>)
-            }
+            { post.attachments && post.attachments.length > 0 && ( <Attachments attachments={ post.attachments } /> ) }
             
             <div className="post-details">
                 <div className="post-likes">

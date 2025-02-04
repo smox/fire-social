@@ -31,26 +31,6 @@
     white-space: pre-wrap;
 }
 
-.attachment-wrapper {
-    margin: 1rem;
-}
-.attachments {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-content: center;
-    
-    margin-bottom: 1rem;
-    height: 10rem;
-    width: calc(100vw - 680px);
-    overflow-x: auto;
-}
-
-.attachment {
-    margin: auto 8px auto 0;
-    height: 80%;
-}
-
 
 .comments {
     /* Standardzustand: ausgeklappt = 0 Höhe */
